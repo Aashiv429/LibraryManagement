@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+
+ 
+
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+ 
+
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+
+
+
+	<class name="com.digit.javaTraining.bean.Plans" table="plans">
+
+
+
+		<id name="Sub_id" column="sub_id"></id>
+
+		<property name="plan" column="plan"></property>
+
+		<property name="amount" column="amount"></property>
+
+	</class>
+
+
+
+</hibernate-mapping>

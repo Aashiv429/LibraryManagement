@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.digit.javaTraining.bean.User" table="user">
+
+        <id name="user_id" column="user_id"></id>
+        <property name="uname">
+            <column name="uname" />
+        </property>
+        <property name="bname">
+            <column name="bname" />
+        </property>
+        <property name="pwd">
+            <column name="pwd" />
+        </property>
+        <property name="phone">
+            <column name="phone" />
+        </property>
+        <property name="email">
+            <column name="email" />
+        </property>
+        <property name="status">
+            <column name="status" />
+        </property>
+
+    </class>
+
+</hibernate-mapping>

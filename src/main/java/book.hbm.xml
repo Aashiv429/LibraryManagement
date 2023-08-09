@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.digit.javaTraining.bean.Book" table="Book">
+
+        <id name="bid" column="bid"></id>
+        <property name="bname">
+            <column name="bname" />
+        </property>
+        <property name="user_id">
+            <column name="user_id" />
+        </property>
+        <property name="author">
+            <column name="author" />
+        </property>
+        <property name="cost">
+            <column name="cost" />
+        </property>
+        <property name="category">
+            <column name="ctegory" />
+        </property>
+        <property name="status">
+            <column name="status" />
+        </property>
+
+    </class>
+
+</hibernate-mapping>

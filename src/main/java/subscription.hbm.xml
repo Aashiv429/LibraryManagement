@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.digit.javaTraining.bean.Subscription" table="subscription">
+
+        <id name="sub_id" column="sub_id">
+        </id>
+        
+        <property name="user_id">
+            <column name="user_id" />
+        </property>
+        <property name="amount">
+            <column name="amount" />
+        </property>
+        <property name="invoice">
+            <column name="invoice" />
+        </property>
+        <property name="date">
+            <column name="date" />
+        </property>
+        
+
+    </class>
+
+</hibernate-mapping>
