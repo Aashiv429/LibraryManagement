@@ -46,11 +46,11 @@
 			</tr>
 
 			<%
-			String url = "jdbc:mysql://localhost:3306/Library";
+			String url = "jdbc:mysql://localhost:3306/library";
 
 			String user = "root";
 
-			String pwd = "Minion@29";
+			String pwd = "Anshu0705@";
 
 			try {
 
