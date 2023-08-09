@@ -25,9 +25,9 @@ public class AdminLoginController extends HttpServlet {
 		boolean b = hm.adminLogin(a.getAdmin_id());
 
 		if (b == true) {
-			resp.sendRedirect("/Library_Management/adminHome.html");
+			resp.sendRedirect("adminHome.html");
 		} else {
-			resp.sendRedirect("/Library_Management/fail.html");
+			resp.sendRedirect("fail.html");
 			System.out.println("login failed");
 		}
 	}
