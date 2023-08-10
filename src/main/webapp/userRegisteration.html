@@ -30,26 +30,28 @@
 	<section class="callout" style="padding-top: 30px;">
 		<div class="container px-4 px-lg-5 text-center">
 			<h2 class="mx-auto mt-5">
-				User Login
+				Register User
 			</h2>
 			<!-- 
                 <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a> -->
 			<div class="row" style="display: flex; justify-content: center;">
 				<form class="form-horizontal" role="form" action="userRegisteration" align ="center" method="post">
 					
-					<label>Enter UserId</label><br>
-					<input type="text" name="user_id">
-					<label>Enter UserName</label><br><br>
-					<input type="text" name="uname">
-					<label>Create Password</label><br><br>
-					<input type="text" name="pwd">
-					<label>Enter PhoneNumber</label><br><br>
-					<input type="text" name="phone">
-					<label>Enter Email</label><br><br>
-					<input type="text" name="email">
-					<button type="submit" class="btn btn-primary btn-dark">Register</button>
+					<input type="text" class="form form-control mb-2" name="user_id" placeholder="User Id">
+					
+					<input type="text" class="form form-control mb-2" name="uname" placeholder="User Name">
+					
+					<input type="text" class="form form-control mb-2" name="pwd" placeholder="User Password">
+				
+					<input type="text" class="form form-control mb-2" name="phone" placeholder="Phone">
+				
+					<input type="text" class="form form-control mb-2" name="email" placeholder="User Email">
+					
+					  <input type="submit" class="btn btn-primary" value="Register" style="width: 200px;">
+					<br><br>
+					
+                     <a class="home-link" href="index.html">Go to Home Page.</a>
 				</form>
-				<a class="home-link" href="index.html">Go to Home Page.</a>
 			</div>
 		</div>
 	</section>
