@@ -164,7 +164,7 @@ public boolean adminLogin(int admin_id) {
 
         
 
-        if(u.getUser_id()==uid && u.getPwd()==upwd&&status==1) {
+        if(u.getUser_id()==uid && u.getPwd()==upwd &&status==1) {
 
             return true;
 
