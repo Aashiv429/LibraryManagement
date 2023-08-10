@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.digit.hibernateServlet.Model.HibernateManager;
 import com.digit.javaTraining.bean.Admin;
 
-@WebServlet("/login")
+@WebServlet("/Login")
 public class AdminLoginController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

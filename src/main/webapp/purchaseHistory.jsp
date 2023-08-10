@@ -23,9 +23,9 @@
 				<th>Book Category</th>
 			</tr>
 			<% 
-            String url = "jdbc:mysql://localhost:3306/library";
+            String url = "jdbc:mysql://localhost:3306/Library";
             String user = "root";
-            String pwd = "Anshu0705@";
+            String pwd = "Minion@29";
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");

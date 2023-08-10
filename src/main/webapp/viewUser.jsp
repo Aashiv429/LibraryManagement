@@ -46,11 +46,11 @@
 			</tr>
 
 			<%
-			String url = "jdbc:mysql://localhost:3306/library";
+			String url = "jdbc:mysql://localhost:3306/Library";
 
 			String user = "root";
 
-			String pwd = "Anshu0705@";
+			String pwd = "Minion@29";
 
 			try {
 
@@ -62,7 +62,7 @@
 
 				ResultSet resultSet = pstmt.executeQuery("SELECT * FROM user");
 
-				while (resultSet.next()) {
+				while (resultSet.next()== true) {
 			%>
 
 			<tr>
@@ -71,10 +71,10 @@
 
 				<td><%=resultSet.getString(2)%></td>
 
-				<td><%=resultSet.getString(4)%></td>
-				<td><%=resultSet.getString(5)%></td>
+				<td><%=resultSet.getInt(5)%></td>
+				<td><%=resultSet.getString(6)%></td>
 
-				<td><%=resultSet.getInt(6)%></td>
+				<td><%=resultSet.getInt(7)%></td>
 
 
 			</tr>

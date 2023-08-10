@@ -28,7 +28,7 @@ public class UserLoginController extends HttpServlet {
 	
 		
 		if(b==true) {
-			resp.sendRedirect("DeleteSuccess.html");
+			resp.sendRedirect("success.html");
 		}
 		else {
 			resp.sendRedirect("fail.html");

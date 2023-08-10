@@ -12,11 +12,11 @@
 
       <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
-      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library</property>
+      <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Library</property>
 
       <property name="hibernate.connection.username">root</property>
 
-      <property name="hibernate.connection.password">Anshu0705@</property>
+      <property name="hibernate.connection.password">Minion@29</property>
 
       <property name="hibernate.connection.pool_size">10</property>
 
