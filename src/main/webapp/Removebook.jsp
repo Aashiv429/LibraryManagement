@@ -1,12 +1,27 @@
+<%@ page import="java.sql.ResultSet"%>
+
+<%@ page import="java.sql.Statement"%>
+
+<%@ page import="java.sql.DriverManager"%>
+
+<%@ page import="java.sql.Connection"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
+	import="java.util.*,com.digit.javaTraining.bean.Plans,com.digit.hibernateServlet.Model.HibernateManager,com.digit.javaTraining.bean.Book"
+	%>
+
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Banking Application Registration</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<meta charset="UTF-8">
+
+<title>Transaction History</title>
+
+<link rel="stylesheet" type="text/css" href="sty.css">
     <style>
         body {
             margin: 0;
@@ -21,7 +36,7 @@
             padding: 20px;
             background-color: #fff; /* White background */
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  
         }
 
         h2 {
@@ -76,24 +91,63 @@
 </head>
 
 <body>
-    <form class="form-horizontal" role="form" action="userRegisteration" method="post">
-<h2>Register User</h2>
-		<label>Enter UserId</label>
-		<input type = "text" name="user_id">
-			<label>Enter UserName</label>
-		<input type = "text" name="uname">
-			<label>Create Password</label>
-		<input type = "text" name="pwd">
-			<label>Enter PhoneNumber</label>
-		<input type = "text" name="phone">
-			<label>Enter Email</label>
-		<input type = "text" name="email">
-        <button type="submit" class="btn btn-primary btn-dark">Register</button>
-    </form>
-    <a class="home-link" href="index.html">Go to Home Page.</a>
 
+	<div class="container">
+
+		<h1>Select Book to Remove</h1>
+		<%
+		ArrayList<Book> allBook = HibernateManager.getAllBooks();
+		%>
+
+		<table>
+
+			<tr>
+
+				<th>Book ID</th>
+
+				<th>Book Name</th>
+
+				<th>Book Author</th>
+
+				<th>Book Cost</th>
+
+				<th>Book Category</th>
+				
+				<th>Book Status</th>
+
+			</tr>
+
+			<%
+			for (Book curBook : allBook) {
+			%>
+			<tr>
+				<td><%=curBook.getBid()%></td>
+				<td><%=curBook.getBname()%></td>
+				<td><%=curBook.getAuthor()%></td>
+				<td><%=curBook.getCost()%></td>
+				<td><%=curBook.getCategory()%></td>
+				<td><%=curBook.getStatus()%></td>
+			</tr>
+			<%
+			}
+			%>
+
+		</table>
+		 <form class="form-horizontal" role="form" action="RemoveBook" method="post">
+		<label>Enter the Book Id</label><br>
+		<input type="text" name="bid"><br><br>
+        <button type="submit" class="btn btn-primary btn-dark">Remove</button>
+    </form>
+  
     <!-- Bootstrap JS (optional) -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+		<br> <a href="adminHome.html">Go To Home</a>
+
+	</div>
+
 </body>
 
 </html>

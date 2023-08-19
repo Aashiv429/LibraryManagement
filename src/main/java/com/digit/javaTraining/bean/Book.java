@@ -1,5 +1,9 @@
 package com.digit.javaTraining.bean;
 
+import org.hibernate.Transaction;
+
+import com.digit.hibernateServlet.Model.HibernateManager;
+
 public class Book {
 int bid;
 String bname;
@@ -50,6 +54,31 @@ public String getCategory() {
 }
 public void setCategory(String category) {
 	this.category = category;
+}
+
+
+public int getBookAmount(int bid) {
+	HibernateManager hbm =  new HibernateManager();
+	Transaction trn = hbm.session.beginTransaction();
+	Book p =(Book) hbm.session.get(Book.class,bid);
+	if(p==null) {
+		return -1;
+	}
+	this.bid = p.getBid();
+	this.bname = p.getBname();
+	this.cost = p.getCost();
+	return cost;
+	
+}
+public String getBookName(int bid) {
+	HibernateManager hbm =  new HibernateManager();
+	Transaction trn = hbm.session.beginTransaction();
+	Book p =(Book) hbm.session.get(Book.class,bid);
+	this.bid = p.getBid();
+	this.bname = p.getBname();
+	this.cost = p.getCost();
+	return bname;
+	
 }
 
 

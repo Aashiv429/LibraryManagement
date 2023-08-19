@@ -43,5 +43,17 @@ public int getInvoice() {
 public void setInvoice(int invoice) {
 	this.invoice = invoice;
 }
+public PurchaseHistory(int book_id, String bname, int user_id, int amount, int invoice) {
+	super();
+	this.book_id = book_id;
+	this.bname = bname;
+	this.user_id = user_id;
+	this.amount = amount;
+	this.invoice = invoice;
+}
+public PurchaseHistory() {
+	super();
+}
+
 
 }

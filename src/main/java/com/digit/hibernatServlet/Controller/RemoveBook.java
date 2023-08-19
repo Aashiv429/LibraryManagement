@@ -20,8 +20,13 @@ public class RemoveBook extends HttpServlet {
 
         HibernateManager hbm = new HibernateManager();
 
-        hbm.removeBook(bid);
-
-        res.sendRedirect("DeleteSuccess.html");
+        boolean b = hbm.removeBook(bid);
+        
+        if(b==true) {
+        	res.sendRedirect("SuccessForAdmin.html");
+        }
+        else {
+        	res.sendRedirect("FailForAdmin.html");
+        }
     }
 }

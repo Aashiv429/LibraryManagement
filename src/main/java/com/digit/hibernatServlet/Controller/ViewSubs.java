@@ -14,15 +14,20 @@ import com.digit.javaTraining.bean.Plans;
 
 
 
-@WebServlet("/ViewPlan")
-public class ViewPlans extends HttpServlet{
+@WebServlet("/ViewSub")
+public class ViewSubs extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession curSession = req.getSession();
+//		HttpSession curSession = req.getSession();
+	
+		
+		
+		
+		
 		Plans p = new Plans();
 		ArrayList<Plans> ss = p.readAll();
 		HttpSession session = req.getSession();
-		session.setAttribute("plans", ss);
-		resp.sendRedirect("ViewP.jsp");
+		session.setAttribute("Allplans", ss);
+		resp.sendRedirect("ViewSubs.jsp");
 	}
 }

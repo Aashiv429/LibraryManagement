@@ -21,9 +21,14 @@ public class RemoveUser extends HttpServlet {
 
         HibernateManager hbm = new HibernateManager();
 
-        hbm.removeUser(user_id);
+        boolean b = hbm.removeUser(user_id);
 
-        res.sendRedirect("DeleteSuccess.html");
+        if(b==true) {
+        	res.sendRedirect("SuccessForAdmin.html");
+        }
+        else {
+        	res.sendRedirect("FailForAdmin.html");
+        }
     }
 }
 

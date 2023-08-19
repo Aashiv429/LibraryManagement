@@ -13,9 +13,6 @@
         <property name="bname">
             <column name="bname" />
         </property>
-        <property name="user_id">
-            <column name="user_id" />
-        </property>
         <property name="author">
             <column name="author" />
         </property>
@@ -23,7 +20,7 @@
             <column name="cost" />
         </property>
         <property name="category">
-            <column name="ctegory" />
+            <column name="category" />
         </property>
         <property name="status">
             <column name="status" />

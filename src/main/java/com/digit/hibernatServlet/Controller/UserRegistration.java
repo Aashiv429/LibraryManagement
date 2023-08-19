@@ -28,8 +28,12 @@ public class UserRegistration extends HttpServlet{
 		HibernateManager hbm = new HibernateManager();
 	boolean x = hbm.saveObj(user);
 	if(x==true) {
-		PrintWriter print = resp.getWriter();
+//		PrintWriter print = resp.getWriter();
 		resp.sendRedirect("success.html");
+	}
+	else {
+		resp.sendRedirect("fail.html");
+		
 	}
 		
 		

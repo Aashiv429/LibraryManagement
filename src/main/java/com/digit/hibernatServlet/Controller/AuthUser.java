@@ -19,14 +19,13 @@ public class AuthUser extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Admin ad=new Admin();
 		HibernateManager hbm=new HibernateManager();
-        //int status=Integer.parseInt(req.getParameter("status"));
 		int user_id=Integer.parseInt(req.getParameter("user_id"));
 		int status=1;
 		if(hbm.authUsers(user_id,status)) {
-		resp.sendRedirect("success.html");	
+		resp.sendRedirect("SuccessForAdmin.html");	
 		}
 		else {
-			resp.sendRedirect("fail.html");	
+			resp.sendRedirect("FailForAdmin.html");	
 		}
 	}
 

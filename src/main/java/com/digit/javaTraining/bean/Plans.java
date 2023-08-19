@@ -73,4 +73,18 @@ public class Plans {
 		trn.commit();
 		return a;
 	}
+	
+	public int Amount(int sid) {
+		Transaction trn = session.beginTransaction();
+		Plans p =(Plans) session.get(Plans.class,sid);
+		if(p==null) {
+			return -1;
+		}
+		this.Sub_id = p.getSub_id();
+		this.plan = p.getPlan();
+		this.amount = p.getAmount();
+		
+		return amount;
+		
+	}
 }

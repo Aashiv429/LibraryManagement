@@ -1,17 +1,25 @@
 <%@ page import="java.sql.ResultSet"%>
+
 <%@ page import="java.sql.Statement"%>
+
 <%@ page import="java.sql.DriverManager"%>
+
 <%@ page import="java.sql.Connection"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"
-import="java.util.*,com.digit.javaTraining.bean.Plans,com.digit.hibernateServlet.Model.HibernateManager,com.digit.javaTraining.bean.Book"
-	%>
+	pageEncoding="UTF-8"
+	import="java.util.*,com.digit.javaTraining.bean.Plans,com.digit.hibernateServlet.Model.HibernateManager,com.digit.javaTraining.bean.User"%>
 
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <meta charset="UTF-8">
-<title>Books Authorization</title>
+
+<title>Transaction History</title>
+
 <link rel="stylesheet" type="text/css" href="sty.css">
 <style>
 body {
@@ -76,51 +84,66 @@ button:hover {
 	color: #006666; /* Lighter teal link color on hover */
 }
 </style>
+
 </head>
+
 <body>
+
 	<div class="container">
-		<h1>Books Authorization</h1>
+
+		<h1>Select User to Remove</h1>
 		<%
-		ArrayList<Book> allBook = HibernateManager.getAllBooks();
+		ArrayList<User> allUser = HibernateManager.getAllUser();
 		%>
+
 		<table>
+
 			<tr>
-				<th>Book ID</th>
-				<th>Book Name</th>
-				<th>Book Author</th>
-				<th>Book Cost</th>
-				<th>Book Category</th>
-				<th>Book Status</th>
+
+				<th>User ID</th>
+
+				<th>User Name</th>
+
+				<th>User Phone</th>
+
+				<th>User Email</th>
+
+				<th>User Status</th>
+
 			</tr>
 
 			<%
-			for (Book curBook : allBook) {
+			for (User curUser : allUser) {
 			%>
 			<tr>
-				<td><%=curBook.getBid()%></td>
-				<td><%=curBook.getBname()%></td>
-				<td><%=curBook.getAuthor()%></td>
-				<td><%=curBook.getCost()%></td>
-				<td><%=curBook.getCategory()%></td>
-				<td><%=curBook.getStatus()%></td>
+				<td><%=curUser.getUser_id()%></td>
+				<td><%=curUser.getUname()%></td>
+				<td><%=curUser.getPhone()%></td>
+				<td><%=curUser.getEmail()%></td>
+				<td><%=curUser.getStatus()%></td>
 			</tr>
 			<%
 			}
 			%>
-		</table>
 
-		<form class="form-horizontal" role="form" action="authBook"
+		</table>
+		<form class="form-horizontal" role="form" action="RemoveUser"
 			method="post">
-			<label>Enter Book Id to Select</label><br> <input type="text"
-				name="bid"><br> <br>
-			<button type="submit" class="btn btn-primary btn-dark">submit</button>
+			<label>User Id</label><br> <input type="text" name="user_id"><br>
+			<br>
+			<button type="submit" class="btn btn-primary btn-dark">Remove</button>
 		</form>
 
 		<!-- Bootstrap JS (optional) -->
 		<script
 			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+
 		<br> <a href="adminHome.html">Go To Home</a>
+
 	</div>
+
 </body>
+
 </html>

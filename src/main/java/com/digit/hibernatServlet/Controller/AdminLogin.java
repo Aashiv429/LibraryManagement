@@ -12,23 +12,22 @@ import com.digit.hibernateServlet.Model.HibernateManager;
 import com.digit.javaTraining.bean.Admin;
 
 @WebServlet("/login")
-public class AdminLoginController extends HttpServlet {
+public class AdminLogin extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Admin a = new Admin();
 		HibernateManager hm = new HibernateManager();
-		a.setAdmin_id(Integer.parseInt(req.getParameter("admin_id")));
-		a.setSecret_pin(Integer.parseInt(req.getParameter("secret_pin")));
+		int admin_id = Integer.parseInt(req.getParameter("admin_id"));
+	int secret_pin =	Integer.parseInt(req.getParameter("secret_pin"));
 
 		System.out.println(a.getAdmin_id());
 
-		boolean b = hm.adminLogin(a.getAdmin_id());
+		boolean b = hm.Adminlogin(admin_id, secret_pin);
 
 		if (b == true) {
 			resp.sendRedirect("adminHome.html");
 		} else {
 			resp.sendRedirect("fail.html");
-			System.out.println("login failed");
 		}
 	}
 

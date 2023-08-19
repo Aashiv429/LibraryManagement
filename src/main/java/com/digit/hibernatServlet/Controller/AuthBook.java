@@ -23,10 +23,10 @@ public class AuthBook extends HttpServlet{
 		int bid=Integer.parseInt(req.getParameter("bid"));
 		int status=1;
 		if(hbm.authoriseBook(bid,status)) {
-		resp.sendRedirect("success.html");	
+		resp.sendRedirect("SuccessForAdmin.html");	
 		}
 		else {
-			resp.sendRedirect("fail.html");	
+			resp.sendRedirect("FailForAdmin.html");	
 		}
 	}
 
