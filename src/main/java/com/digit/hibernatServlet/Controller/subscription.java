@@ -26,6 +26,7 @@ public class subscription extends HttpServlet {
 		int bid = Integer.parseInt(req.getParameter("bid"));
 		int pin = Integer.parseInt(req.getParameter("pin"));
 		Plans plan = new Plans();
+		HibernateManager hbm = new HibernateManager();
 		int amount = plan.Amount(sid);
 		if (amount == -1) {
 			resp.sendRedirect("FailForUser.html");
@@ -37,7 +38,6 @@ public class subscription extends HttpServlet {
 			b.view(bid);
 			int balance = b.getAmount();
 			
-			HibernateManager hbm = new HibernateManager();
 			boolean blogin = hbm.Banklogin(bid, pin);
 			
 			if(blogin==true && balance>=amount) {

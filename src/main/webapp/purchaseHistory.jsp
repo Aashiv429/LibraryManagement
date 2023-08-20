@@ -40,7 +40,6 @@
 				<td><%=curSub.getBname()%></td>
 				<td><%=curSub.getAmount()%></td>
 				<td><%=curSub.getUser_id()%></td>
-
 				<td><%=curSub.getInvoice()%></td>
 			</tr>
 			<%

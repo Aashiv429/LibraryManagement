@@ -5,14 +5,13 @@ import java.util.ArrayList;
 
 
 public class Subscription {
+int invoice;
 int sub_id;
 int user_id;
 int amount;
-int invoice;
 String date;
  
-public Subscription()
-{
+public Subscription() {
 	
 }
 

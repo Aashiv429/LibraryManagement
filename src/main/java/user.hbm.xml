@@ -13,9 +13,6 @@
         <property name="uname">
             <column name="uname" />
         </property>
-        <property name="bname">
-            <column name="bname" />
-        </property>
         <property name="pwd">
             <column name="pwd" />
         </property>

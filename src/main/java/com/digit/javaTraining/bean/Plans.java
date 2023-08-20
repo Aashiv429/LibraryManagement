@@ -57,9 +57,8 @@ public class Plans {
 	}
 
 	public ArrayList<Plans> readAll() {
-
 		ArrayList<Plans> a = new ArrayList<Plans>();
-		Transaction trn = session.beginTransaction();
+		Transaction t = session.beginTransaction();
 		Query q = session.createQuery("From Plans");
 		List list = q.list();
 		Iterator itr = list.iterator();
@@ -70,13 +69,14 @@ public class Plans {
 			this.amount = s.getAmount();
 			a.add(s);
 		}
-		trn.commit();
+		t.commit();
 		return a;
 	}
 	
 	public int Amount(int sid) {
-		Transaction trn = session.beginTransaction();
+		Transaction t = session.beginTransaction();
 		Plans p =(Plans) session.get(Plans.class,sid);
+		t.commit();
 		if(p==null) {
 			return -1;
 		}
@@ -85,6 +85,5 @@ public class Plans {
 		this.amount = p.getAmount();
 		
 		return amount;
-		
 	}
 }

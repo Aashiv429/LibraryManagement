@@ -17,7 +17,6 @@ public class RemoveBook extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         int bid = (Integer.parseInt(req.getParameter("bid")));
 
-
         HibernateManager hbm = new HibernateManager();
 
         boolean b = hbm.removeBook(bid);

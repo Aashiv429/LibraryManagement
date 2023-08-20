@@ -9,7 +9,8 @@
 
     <class name="com.digit.javaTraining.bean.Subscription" table="subscription">
 
-        <id name="sub_id" column="sub_id">
+        
+        <id name="invoice" column="invoice">
         </id>
         
         <property name="user_id">
@@ -18,8 +19,8 @@
         <property name="amount">
             <column name="amount" />
         </property>
-        <property name="invoice">
-            <column name="invoice" />
+        <property name="sub_id">
+            <column name="sub_id" />
         </property>
         <property name="date">
             <column name="date" />

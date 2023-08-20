@@ -24,20 +24,13 @@ public class UserRegistration extends HttpServlet{
 		user.setPwd(req.getParameter("pwd"));
 		user.setPhone(Integer.parseInt(req.getParameter("phone")));
 		user.setEmail(req.getParameter("email"));
-//		user.setStatus(Integer.parseInt(req.getParameter("status")));
 		HibernateManager hbm = new HibernateManager();
 	boolean x = hbm.saveObj(user);
 	if(x==true) {
-//		PrintWriter print = resp.getWriter();
 		resp.sendRedirect("success.html");
 	}
 	else {
 		resp.sendRedirect("fail.html");
-		
+	}	
 	}
-		
-		
-		
-	}
-
 }

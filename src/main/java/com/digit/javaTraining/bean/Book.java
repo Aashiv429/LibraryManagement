@@ -59,27 +59,24 @@ public void setCategory(String category) {
 
 public int getBookAmount(int bid) {
 	HibernateManager hbm =  new HibernateManager();
-	Transaction trn = hbm.session.beginTransaction();
+	Transaction t = hbm.session.beginTransaction();
 	Book p =(Book) hbm.session.get(Book.class,bid);
-	if(p==null) {
+	t.commit();
+	if(p==null || p.getStatus()==0) {
 		return -1;
 	}
 	this.bid = p.getBid();
 	this.bname = p.getBname();
 	this.cost = p.getCost();
 	return cost;
-	
 }
+
 public String getBookName(int bid) {
 	HibernateManager hbm =  new HibernateManager();
-	Transaction trn = hbm.session.beginTransaction();
 	Book p =(Book) hbm.session.get(Book.class,bid);
 	this.bid = p.getBid();
 	this.bname = p.getBname();
 	this.cost = p.getCost();
 	return bname;
-	
 }
-
-
 }

@@ -41,12 +41,9 @@ public class Bank {
 	}
 	
 	public void view(int id) {
-		session.beginTransaction();
-
-		Bank a = (Bank) session.get(Bank.class, id);
-		
-		this.bank_id = a.getBank_id();
-		this.pin = a.getPin();
-		this.amount = a.getAmount();
+		Bank b = (Bank) session.get(Bank.class, id);
+		this.bank_id = b.getBank_id();
+		this.pin = b.getPin();
+		this.amount = b.getAmount();
 	}
 }

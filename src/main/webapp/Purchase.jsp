@@ -46,6 +46,14 @@ input[type="text"] {
 	margin-bottom: 20px;
 }
 
+input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
 button {
 	background-color: #008080; /* Dark teal button background color */
 	color: #fff; /* White button text color */
@@ -107,10 +115,14 @@ button:hover {
 			%>
 		</table>
 
-		<form class="form-horizontal" role="form" action="Purchase"
-			method="post">
-			<label>Enter Book Id to Select</label><br> <input type="text"
-				name="bid"><br>
+		<form class="form-horizontal" role="form" action="Purchase" method="post">
+			<label>Book Id :</label><br> 
+			<input type="text" name="bookid"><br><br>
+			<h2>Bank Login</h2>
+			<label>Bank ID :</label><br> 
+			<input type="text" name="bid"><br>
+			<label>Password :</label><br> 
+			<input type="password" name="pin"><br>
 			<button type="submit" class="btn btn-primary btn-dark">Purchase</button>
 		</form>
 
